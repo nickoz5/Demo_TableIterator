@@ -104,37 +104,41 @@ sqlPipeline: null
 dependencies:
 - modifiedAt: '2024-07-10T00:53:57.091568Z'
   name: plibMaven
-  version: 8.0.11
+  version: 8.0.25
   id: '828461667'
   createdAt: '2024-07-10T00:53:57.091568Z'
   type: plibMaven
+  enabled: true
+  entity: Project
 - modifiedAt: '2024-07-10T00:53:57.091568Z'
   name: plibPypi
-  version: 1.9.5
+  version: 1.9.9
   id: '1049074502'
   createdAt: '2024-07-10T00:53:57.091568Z'
   type: plibPypi
+  enabled: true
+  entity: Project
 projectDependencies:
-  '225':
-    projectUID: 225
+  '12655':
+    projectUID: 12655
     projectName: ProphecyWarehousePython
-    repositoryPath: gitUri=http://gitserver:3000/wDp16mGH_team_30/QWF0O8MX_project_225.git&subPath=
+    repositoryPath: gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12655.git&subPath=
     version: 0.0.8
     isDefault: true
     author: null
     createdAt: '2024-07-10 00:53:35'
-  '224':
-    projectUID: 224
+  '12654':
+    projectUID: 12654
     projectName: ProphecySparkBasicsPython
-    repositoryPath: gitUri=http://gitserver:3000/wDp16mGH_team_30/QWF0O8MX_project_224.git&subPath=
+    repositoryPath: gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=
     version: 0.2.25
     isDefault: true
     author: null
     createdAt: '2024-07-10 00:53:35'
-  '227':
-    projectUID: 227
+  '12657':
+    projectUID: 12657
     projectName: ProphecyWebAppPython
-    repositoryPath: gitUri=http://gitserver:3000/wDp16mGH_team_30/QWF0O8MX_project_227.git&subPath=
+    repositoryPath: gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12657.git&subPath=
     version: 0.0.5
     isDefault: false
     author: null

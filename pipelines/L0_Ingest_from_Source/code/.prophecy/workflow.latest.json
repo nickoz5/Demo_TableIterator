@@ -3,11 +3,12 @@
     "migrationVersions" : {
       "gemBuilderVersion" : "v1"
     },
+    "functions" : { },
     "codeGenConfiguration" : {
       "editableConfig" : true,
       "plibVersion" : {
-        "mavenVersion" : "8.0.11",
-        "pyPiVersion" : "1.9.5"
+        "mavenVersion" : "8.0.25",
+        "pyPiVersion" : "1.9.9"
       }
     },
     "id" : "1",
@@ -18,14 +19,14 @@
       "isFunctionsPackageDirDefined" : true
     },
     "language" : "python",
-    "fabricId" : "117",
+    "fabricId" : "4345",
     "frontEndLanguage" : "sql",
     "mode" : "batch",
     "udfs" : {
       "language" : "python",
       "udfs" : [ ],
       "functionPackageName" : "nathanprophecyioteam.demotableiterator.functions",
-      "sharedFunctionPackageNames" : [ "prophecy.spark_basic.functions", "prophecy.warehouse.functions", "prophecy.webapp.functions" ]
+      "sharedFunctionPackageNames" : [ "prophecy.webapp.functions", "prophecy.spark_basic.functions", "prophecy.warehouse.functions" ]
     },
     "udafs" : {
       "language" : "python",
@@ -88,16 +89,16 @@
     "buildSystem" : "maven",
     "externalDependencies" : [ ],
     "dependentProjectExternalDependencies" : [ {
-      "projectUID" : "224",
+      "projectUID" : "12657",
+      "projectName" : "ProphecyWebAppPython",
+      "externalDependencies" : [ ]
+    }, {
+      "projectUID" : "12654",
       "projectName" : "ProphecySparkBasicsPython",
       "externalDependencies" : [ ]
     }, {
-      "projectUID" : "225",
+      "projectUID" : "12655",
       "projectName" : "ProphecyWarehousePython",
-      "externalDependencies" : [ ]
-    }, {
-      "projectUID" : "227",
-      "projectName" : "ProphecyWebAppPython",
       "externalDependencies" : [ ]
     } ],
     "isImported" : false,
@@ -302,7 +303,7 @@
             "allowInportRename" : true
           },
           "componentInfo" : {
-            "gemId" : "gitUri=http://gitserver:3000/wDp16mGH_team_30/QWF0O8MX_project_224.git&subPath=&tag=0.2.25&projectSubscriptionProjectId=224&path=gems/ControlFlowInput",
+            "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.25&projectSubscriptionProjectId=12654&path=gems/ControlFlowInput",
             "projectName" : "ProphecySparkBasicsPython"
           }
         },
@@ -339,7 +340,7 @@
             "allowInportRename" : true
           },
           "componentInfo" : {
-            "gemId" : "gitUri=http://gitserver:3000/wDp16mGH_team_30/QWF0O8MX_project_224.git&subPath=&tag=0.2.25&projectSubscriptionProjectId=224&path=gems/ControlFlowOutput",
+            "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.25&projectSubscriptionProjectId=12654&path=gems/ControlFlowOutput",
             "projectName" : "ProphecySparkBasicsPython"
           }
         },
@@ -349,7 +350,7 @@
           "metadata" : {
             "label" : "source_path",
             "slug" : "source_path",
-            "x" : -80,
+            "x" : -140,
             "y" : -60,
             "phase" : 0,
             "cache" : false,
@@ -399,7 +400,7 @@
         }
       },
       "componentInfo" : {
-        "gemId" : "gitUri=http://gitserver:3000/wDp16mGH_team_30/QWF0O8MX_project_224.git&subPath=&tag=0.2.25&projectSubscriptionProjectId=224&path=gems/TableIterator",
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.25&projectSubscriptionProjectId=12654&path=gems/TableIterator",
         "projectName" : "ProphecySparkBasicsPython"
       }
     },
@@ -415,7 +416,7 @@
         "cache" : false,
         "detailedStats" : false,
         "isImported" : false,
-        "comment" : "Extracts relevant information from a DataFrame, including source path, target table name, size, and timestamp.",
+        "comment" : "Extracts source path, target table name, size, and timestamp from a given DataFrame.",
         "autoUpdateComment" : true
       },
       "ports" : {
@@ -505,10 +506,10 @@
         } ],
         "importString" : "",
         "activeTab" : "expressions",
-        "columnsSelector" : [ "QlVSBIOASzW2_id7CkJSO$$o8gPk6D0LEVln_MFXADFT##modificationTime", "QlVSBIOASzW2_id7CkJSO$$o8gPk6D0LEVln_MFXADFT##path", "QlVSBIOASzW2_id7CkJSO$$o8gPk6D0LEVln_MFXADFT##size" ]
+        "columnsSelector" : [ "QlVSBIOASzW2_id7CkJSO$$o8gPk6D0LEVln_MFXADFT##modificationTime", "QlVSBIOASzW2_id7CkJSO$$o8gPk6D0LEVln_MFXADFT##size", "QlVSBIOASzW2_id7CkJSO$$o8gPk6D0LEVln_MFXADFT##path" ]
       },
       "componentInfo" : {
-        "gemId" : "gitUri=http://gitserver:3000/wDp16mGH_team_30/QWF0O8MX_project_224.git&subPath=&tag=0.2.25&projectSubscriptionProjectId=224&path=gems/Reformat",
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.25&projectSubscriptionProjectId=12654&path=gems/Reformat",
         "projectName" : "ProphecySparkBasicsPython"
       }
     },
@@ -607,8 +608,7 @@
     "severity" : 2,
     "message" : "Gems inside the subgraph have warning",
     "tags" : [ ],
-    "relatedInformation" : [ ],
-    "diagnosticType" : 1
+    "relatedInformation" : [ ]
   }, {
     "property" : "$.workflow.processes.9MlD-VzBoIj5xtj9rdtGA$$Nmy1cuYpNp8OXD3TRRSBj.processes.mmQ2pCar0EKc8v26nizqn$$IKOwimWsBoyGKNf7Nq9XA.properties.dataset.schema",
     "range" : {
@@ -624,8 +624,7 @@
     "severity" : 2,
     "message" : "Missing Schema. Please infer schema or provide it manually.",
     "tags" : [ ],
-    "relatedInformation" : [ ],
-    "diagnosticType" : 1
+    "relatedInformation" : [ ]
   }, {
     "property" : "$.workflow.processes.9MlD-VzBoIj5xtj9rdtGA$$Nmy1cuYpNp8OXD3TRRSBj.processes.70y8HXBxHoLy0cBwo6fE5$$gniPl1MuTnvoa-lBtMlrP",
     "range" : {
@@ -641,7 +640,6 @@
     "severity" : 2,
     "message" : "One of the upstream gems is broken. Please, fix it first.",
     "tags" : [ ],
-    "relatedInformation" : [ ],
-    "diagnosticType" : 1
+    "relatedInformation" : [ ]
   } ]
 }
