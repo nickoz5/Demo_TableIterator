@@ -19,7 +19,7 @@
       "isFunctionsPackageDirDefined" : true
     },
     "language" : "python",
-    "fabricId" : "4345",
+    "fabricId" : "14778",
     "frontEndLanguage" : "sql",
     "mode" : "batch",
     "udfs" : {
@@ -40,28 +40,10 @@
           "kind" : {
             "type" : "record",
             "fields" : [ {
-              "name" : "source_path",
+              "name" : "source_catalog",
               "kind" : {
                 "type" : "string",
                 "value" : ""
-              },
-              "optional" : false,
-              "isWorkflowNodeConfiguration" : false,
-              "isReferenced" : false
-            }, {
-              "name" : "target_table",
-              "kind" : {
-                "type" : "string",
-                "value" : ""
-              },
-              "optional" : false,
-              "isWorkflowNodeConfiguration" : false,
-              "isReferenced" : false
-            }, {
-              "name" : "timestamp",
-              "kind" : {
-                "type" : "long",
-                "value" : 0
               },
               "optional" : false,
               "isWorkflowNodeConfiguration" : false,
@@ -146,35 +128,8 @@
           "schema" : {
             "type" : "struct",
             "fields" : [ {
-              "name" : "source_path",
+              "name" : "source_catalog",
               "type" : "string",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "target_table",
-              "type" : "string",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "size",
-              "type" : "long",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "timestamp",
-              "type" : "long",
               "nullable" : true,
               "metadata" : {
                 "description" : "",
@@ -192,20 +147,14 @@
       },
       "properties" : {
         "metagemProperty" : {
-          "availableColumnNames" : [ "source_path", "target_table", "size", "timestamp" ],
-          "availableConfigFieldNames" : [ "source_path", "target_table", "timestamp" ],
+          "availableColumnNames" : [ "source_catalog" ],
+          "availableConfigFieldNames" : [ "source_catalog" ],
           "numberOfThreads" : "9",
           "maxIteration" : "1000",
           "parallelismEnabled" : true,
           "configToColumnMap" : [ {
-            "configName" : "source_path",
-            "columnName" : "source_path"
-          }, {
-            "configName" : "target_table",
-            "columnName" : "target_table"
-          }, {
-            "configName" : "timestamp",
-            "columnName" : "timestamp"
+            "configName" : "source_catalog",
+            "columnName" : "source_catalog"
           } ]
         }
       },
@@ -219,7 +168,7 @@
           "isHidden" : true
         }
       }, {
-        "id" : "am6LgNIsOkAxRu6hOpZRc$$e2ewJGBh0-babmSplJUg5",
+        "id" : "e80OchBebo3claUIPmP4y",
         "source" : "mmQ2pCar0EKc8v26nizqn$$IKOwimWsBoyGKNf7Nq9XA",
         "sourcePort" : "2Kn-Q39gIdK7gNxLM2kZd$$EgzOweJNflMo7kHy0Q1nK",
         "target" : "70y8HXBxHoLy0cBwo6fE5$$gniPl1MuTnvoa-lBtMlrP",
@@ -249,35 +198,8 @@
               "schema" : {
                 "type" : "struct",
                 "fields" : [ {
-                  "name" : "source_path",
+                  "name" : "source_catalog",
                   "type" : "string",
-                  "nullable" : true,
-                  "metadata" : {
-                    "description" : "",
-                    "mappings" : [ ],
-                    "tags" : [ ]
-                  }
-                }, {
-                  "name" : "target_table",
-                  "type" : "string",
-                  "nullable" : true,
-                  "metadata" : {
-                    "description" : "",
-                    "mappings" : [ ],
-                    "tags" : [ ]
-                  }
-                }, {
-                  "name" : "size",
-                  "type" : "long",
-                  "nullable" : true,
-                  "metadata" : {
-                    "description" : "",
-                    "mappings" : [ ],
-                    "tags" : [ ]
-                  }
-                }, {
-                  "name" : "timestamp",
-                  "type" : "long",
                   "nullable" : true,
                   "metadata" : {
                     "description" : "",
@@ -348,14 +270,16 @@
           "id" : "mmQ2pCar0EKc8v26nizqn$$IKOwimWsBoyGKNf7Nq9XA",
           "component" : "Source",
           "metadata" : {
-            "label" : "source_path",
-            "slug" : "source_path",
+            "label" : "source_catalog",
+            "slug" : "source_catalog",
             "x" : -140,
             "y" : -60,
             "phase" : 0,
             "cache" : false,
             "detailedStats" : false,
-            "isImported" : false
+            "isImported" : false,
+            "comment" : "Reads data from a table named 'device' in the 'inventory_uom' catalog.",
+            "autoUpdateComment" : true
           },
           "ports" : {
             "inputs" : [ ],
@@ -416,7 +340,7 @@
         "cache" : false,
         "detailedStats" : false,
         "isImported" : false,
-        "comment" : "Extracts source path, target table name, size, and timestamp from a given DataFrame.",
+        "comment" : "Extracts the source catalog names from the input DataFrame.",
         "autoUpdateComment" : true
       },
       "ports" : {
@@ -426,7 +350,7 @@
           "schema" : {
             "type" : "struct",
             "fields" : [ {
-              "name" : "path",
+              "name" : "tenant_id",
               "type" : "string",
               "nullable" : true,
               "metadata" : {
@@ -435,7 +359,7 @@
                 "tags" : [ ]
               }
             }, {
-              "name" : "name",
+              "name" : "group",
               "type" : "string",
               "nullable" : true,
               "metadata" : {
@@ -444,17 +368,8 @@
                 "tags" : [ ]
               }
             }, {
-              "name" : "size",
-              "type" : "long",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "modificationTime",
-              "type" : "long",
+              "name" : "enabled",
+              "type" : "boolean",
               "nullable" : true,
               "metadata" : {
                 "description" : "",
@@ -476,37 +391,16 @@
       "properties" : {
         "importLanguage" : "${$.workflow.metainfo.frontEndLanguage}",
         "expressions" : [ {
-          "target" : "source_path",
+          "target" : "source_catalog",
           "expression" : {
             "format" : "sql",
-            "expression" : "path"
-          },
-          "description" : ""
-        }, {
-          "target" : "target_table",
-          "expression" : {
-            "format" : "sql",
-            "expression" : "substring_index(substring_index(path, '/', -1), '.', 1)"
-          },
-          "description" : ""
-        }, {
-          "target" : "size",
-          "expression" : {
-            "format" : "sql",
-            "expression" : "size"
-          },
-          "description" : ""
-        }, {
-          "target" : "timestamp",
-          "expression" : {
-            "format" : "sql",
-            "expression" : "modificationTime"
+            "expression" : "tenant_id"
           },
           "description" : ""
         } ],
         "importString" : "",
         "activeTab" : "expressions",
-        "columnsSelector" : [ "QlVSBIOASzW2_id7CkJSO$$o8gPk6D0LEVln_MFXADFT##modificationTime", "QlVSBIOASzW2_id7CkJSO$$o8gPk6D0LEVln_MFXADFT##size", "QlVSBIOASzW2_id7CkJSO$$o8gPk6D0LEVln_MFXADFT##path" ]
+        "columnsSelector" : [ "QlVSBIOASzW2_id7CkJSO$$o8gPk6D0LEVln_MFXADFT##tenant_id" ]
       },
       "componentInfo" : {
         "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.25&projectSubscriptionProjectId=12654&path=gems/Reformat",
@@ -525,7 +419,7 @@
         "cache" : false,
         "detailedStats" : false,
         "isImported" : false,
-        "comment" : "Reads the contents of an S3 directory and returns the file metadata as a DataFrame.",
+        "comment" : "Retrieves metadata information for a specific tenant group.",
         "autoUpdateComment" : true
       },
       "ports" : {
@@ -536,7 +430,7 @@
           "schema" : {
             "type" : "struct",
             "fields" : [ {
-              "name" : "path",
+              "name" : "tenant_id",
               "type" : "string",
               "nullable" : true,
               "metadata" : {
@@ -545,7 +439,7 @@
                 "tags" : [ ]
               }
             }, {
-              "name" : "name",
+              "name" : "group",
               "type" : "string",
               "nullable" : true,
               "metadata" : {
@@ -554,17 +448,8 @@
                 "tags" : [ ]
               }
             }, {
-              "name" : "size",
-              "type" : "long",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "modificationTime",
-              "type" : "long",
+              "name" : "enabled",
+              "type" : "boolean",
               "nullable" : true,
               "metadata" : {
                 "description" : "",
@@ -580,7 +465,7 @@
         "autoUpdateOnRun" : true
       },
       "properties" : {
-        "script" : "out0 = spark.createDataFrame(dbutils.fs.ls('s3://hls-eng-data-public/data/rwe/omop-vocabs'))",
+        "script" : "out0 = spark.table(\"lakehouse.control.tenant\").filter(\"group = 'grp_701' AND enabled=true\")",
         "scriptMethodHeader" : "def Script(spark: SparkSession) -> DataFrame:",
         "scriptMethodFooter" : "    return out0"
       }

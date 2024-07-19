@@ -15,15 +15,13 @@ class TableIterator(MetaGemExec):
 
     def execute(self, spark: SparkSession, subgraph_config: SubgraphConfig) -> List[DataFrame]:
         Config.update(subgraph_config)
-        df_source_path = source_path(spark)
-        target_table(spark, df_source_path)
+        df_source_catalog = source_catalog(spark)
+        target_table(spark, df_source_catalog)
         subgraph_config.update(Config)
 
     def apply(self, spark: SparkSession, in0: DataFrame, ) -> None:
         inDFs = []
-        conf_to_column = dict(
-            [("source_path", "source_path"), ("target_table", "target_table"), ("timestamp", "timestamp")]
-        )
+        conf_to_column = dict([("source_catalog", "source_catalog")])
 
         if in0.count() > 1000:
             raise Exception(f"Config DataFrame row count::{in0.count()} exceeds max run count")

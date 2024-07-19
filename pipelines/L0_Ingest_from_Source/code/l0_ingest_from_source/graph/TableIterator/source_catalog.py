@@ -6,5 +6,5 @@ from prophecy.libs import typed_lit
 from .config import *
 from l0_ingest_from_source.functions import *
 
-def source_path(spark: SparkSession) -> DataFrame:
-    return spark.read.option("header", True).option("sep", ",").csv(Config.source_path)
+def source_catalog(spark: SparkSession) -> DataFrame:
+    return spark.read.table(f"`{Config.source_catalog}`.`inventory_uom`.`device`")
