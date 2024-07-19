@@ -1,5 +1,6 @@
 name: Demo_TableIterator
-description: ''
+description: Uses pipeline configurations to iterator over one or more gems for a
+  given input Dataframe.
 version: 0.0.1
 author: nathan@prophecy.io
 language: python
