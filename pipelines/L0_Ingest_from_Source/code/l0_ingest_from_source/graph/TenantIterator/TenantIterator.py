@@ -7,7 +7,7 @@ from . import *
 from .config import *
 
 
-class TableIterator(MetaGemExec):
+class TenantIterator(MetaGemExec):
 
     def __init__(self, config):
         self.config = config
@@ -15,8 +15,8 @@ class TableIterator(MetaGemExec):
 
     def execute(self, spark: SparkSession, subgraph_config: SubgraphConfig) -> List[DataFrame]:
         Config.update(subgraph_config)
-        df_source_catalog = source_catalog(spark)
-        target_table(spark, df_source_catalog)
+        df_source_path = source_path(spark)
+        target_table(spark, df_source_path)
         subgraph_config.update(Config)
 
     def apply(self, spark: SparkSession, in0: DataFrame, ) -> None:

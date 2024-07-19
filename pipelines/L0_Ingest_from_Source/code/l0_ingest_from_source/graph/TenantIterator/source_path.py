@@ -6,5 +6,5 @@ from prophecy.libs import typed_lit
 from .config import *
 from l0_ingest_from_source.functions import *
 
-def target_table(spark: SparkSession, in0: DataFrame):
-    in0.write.format("delta").mode("overwrite").saveAsTable(f"`ntong`.`default`.`{Config.target_table}`")
+def source_path(spark: SparkSession) -> DataFrame:
+    return spark.read.table(f"`{Config.source_catalog}`.`inventory_uom`.`device`")

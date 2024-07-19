@@ -9,7 +9,7 @@ from l0_ingest_from_source.graph import *
 def pipeline(spark: SparkSession) -> None:
     df_metadata_dataframe = metadata_dataframe(spark)
     df_define_source_target_names = define_source_target_names(spark, df_metadata_dataframe)
-    TableIterator(Config.TableIterator).apply(spark, df_define_source_target_names)
+    TenantIterator(Config.TenantIterator).apply(spark, df_define_source_target_names)
 
 def main():
     spark = SparkSession.builder\

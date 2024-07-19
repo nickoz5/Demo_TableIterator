@@ -7,6 +7,6 @@ from l0_ingest_from_source.config.ConfigStore import *
 from l0_ingest_from_source.functions import *
 
 def metadata_dataframe(spark: SparkSession) -> DataFrame:
-    out0 = spark.table("lakehouse.control.tenant").filter("group = 'grp_701' AND enabled=true")
+    out0 = spark.table("lakehouse.control.tenant").filter("group = '" + Config.tenant_group + "' AND enabled=true")
 
     return out0
